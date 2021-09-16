@@ -8,7 +8,7 @@ const MeetupItem = (props) => {
             </div>
             <div class={classes.content}>
                 <h3>{ props.title}</h3>
-                <address>{ props.adress}</address>
+                <address>{props.adress}</address>
                 <p>{props.description}</p>
             </div>
             <div>
