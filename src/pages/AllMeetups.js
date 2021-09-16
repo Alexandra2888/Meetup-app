@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import MeetupList from "../components/meetups/MeetupList";
 
 const DUMMY_DATA = [
@@ -22,6 +23,24 @@ const DUMMY_DATA = [
 ];
 
 const AllMeetupsPage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedMeetups, setLoadedMeetups] = useState([]);
+  fetch(
+    'https://amazing-turing-4349e7.netlify.app/new-meetup/meetups.json'
+  ).then(response => {
+    return response.json();
+  }).then(data => {
+    setIsLoading(false);
+  });
+
+  if (isLoading) {
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    );
+}
+
   return (
     <section>
       <h1>All Meetups</h1>
