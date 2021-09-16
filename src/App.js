@@ -1,28 +1,27 @@
-import { Route, Switch } from "react-router";
-import AllMeetupsPage from "./pages/AllMeetups";
-import FavouritesPage from "./pages/Favourites";
-import NewMeetupsPage from "./pages/NewMeetup";
-import MainNavigation from "./components/layout/MainNavigation";
+
+import { Route, Switch } from 'react-router-dom';
+
+import AllMeetupsPage from './pages/AllMeetups';
+import NewMeetupPage from './pages/NewMeetup';
+import FavoritesPage from './pages/Favorites';
+import Layout from './components/layout/Layout';
 
 const App = () => {
- //{/*eg: localhost:3000 or mypage.com */}
   return (
-    <div>
-      <MainNavigation />
- <Switch>  {/*only one of this routes should be active*/ }
-         <Route path='/' exact={true}>  {/*to check if all path matches not only / */}
-      <AllMeetupsPage />
-      </Route>
-    <Route path='/favourites'>
-      <FavouritesPage />
-      </Route>
-    <Route path='/new-meetups'>
-      <NewMeetupsPage />
-      </Route>
+    <Layout>
+      <Switch>
+        <Route path='/' exact>
+          <AllMeetupsPage />
+        </Route>
+        <Route path='/new-meetup'>
+          <NewMeetupPage />
+        </Route>
+        <Route path='/favorites'>
+          <FavoritesPage />
+        </Route>
       </Switch>
-  </div>
+    </Layout>
   );
 }
-
 
 export default App;
