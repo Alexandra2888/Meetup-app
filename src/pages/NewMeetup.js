@@ -1,12 +1,29 @@
-import NewMeetupsForm from "../components/meetups/NewMeetupsForm";
+import { useHistory } from 'react-router-dom';
+import NewMeetupForm from '../components/meetups/NewMeetupsForm';
 
-const NewMeetups = () => {
-    return (
-        <section>
-            <h1>Add New Meetup Page</h1>
-            <NewMeetupsForm />
-        </section>
-    )
+const NewMeetupPage = () => {
+    const history = useHistory();
+  const addMeetupHandler = (meetupData)=> {
+      fetch(
+          'https://react-getting-started-48dec-default-rtdb.firebaseio.com/meetups.json',
+          {
+              method: 'POST',
+        body: JSON.stringify(meetupData),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    ).then(() => {
+      history.replace('/');
+    });
+    }
+
+  return (
+    <section>
+      <h1>Add New Meetup</h1>
+      <NewMeetupForm onAddMeetup={addMeetupHandler} />
+    </section>
+  );
 }
 
-export default NewMeetups;
+export default NewMeetupPage;
