@@ -2,7 +2,7 @@ import { Route, Switch } from "react-router";
 import AllMeetupsPage from "./pages/AllMeetups";
 import FavouritesPage from "./pages/Favourites";
 import NewMeetupsPage from "./pages/NewMeetup";
-import MainNavigation from "./coponents/layout/MainNavigation";
+import MainNavigation from "./components/layout/MainNavigation";
 
 const App = () => {
  //{/*eg: localhost:3000 or mypage.com */}
