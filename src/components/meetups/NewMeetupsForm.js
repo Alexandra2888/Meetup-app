@@ -1,19 +1,29 @@
 import Card from '../UI/Card';
 import classes from './NewMeetupForm.module.css';
-
-function NewMeetupForm() {
-  function submitHandler(event) {
-    event.preventDefault();
+import { useRef } from 'react';
 
 
-  }
+const NewMeetupForm = () => {
+    const titleInputRef = useRef();
+    const imageInputRef = useRef();
+    const adressInputRef = useRef();
+    const descriptionInputRef = useRef();
 
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+
+        const enteredTitle = titleInputRef.current;
+        const enteredImage = imageInputRef.current;
+        const enteredAdress = adressInputRef.current;
+        const enteredDescription = descriptionInputRef.current;
+    };
   return (
     <Card>
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor='title'>Meetup Title</label>
-          <input type='text' required id='title' />
+          <input type='text' required id='title' ref={titleInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='image'>Meetup Image</label>
