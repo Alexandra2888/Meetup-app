@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import Card from '../UI/Card';
-import classes from './NewMeetupsForm';
+import classes from './NewMeetupForm.module.css';
 
 const NewMeetupForm = (props) => {
   const titleInputRef = useRef();
