@@ -1,6 +1,6 @@
 # Meetup-app
 
-#You can see application live here: https://pensive-babbage-207f88.netlify.app/favorites
+#You can see application live here: https://sharp-jepsen-ab1a56.netlify.app/
 
 Getting Started with Create React App
 This project was bootstrapped with Create React App.
