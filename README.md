@@ -1,3 +1,6 @@
+<img  width=“964” alt="meetup" src="https://github.com/Alexandra2888/Meetup-app/blob/master/collage.png">
+
+
 # Meetup-app
 
 #You can see application live here: https://sharp-jepsen-ab1a56.netlify.app/
